@@ -9,15 +9,15 @@
 python -m venv rasa-venv
 source rasa-venv/bin/activate
 ```
-#### Windows (Git Bash)
+#### Windows (CMD)
 ```
 python3 -m venv rasa-venv
 rasa-env\Scripts\activate.bat
 ```
-#### Windows (CMD)
+#### Windows (Git Bash)
 ```
 python3 -m venv rasa-venv
-./rasa-env/Scripts/activate
+source ./rasa-env/Scripts/activate
 ```
 
 2. Installiere Rasa
@@ -42,6 +42,54 @@ Starten des Chatbots mit Debug Info des Modell-Output:
 rasa shell nlu
 ```
 
+### Netz trainieren
+```
+rasa train
+```
+(später interessant, wenn die Config-files geändert werden)
+
+## Die wichtigsten Config-files
+
+![Rasa Configs](rasa-configs.drawio.png)
+
+## nlu.yml
+
+Enthält **Intents** und **Examples**. Fürs Erste: Intents sind Gruppen von
+Aufforderungen bzw. Fragen des Users an den Chatbot. Zum Beispiel:
+
+```yml
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+```
+
+## stories.yml
+
+Stellt man sich die **Intents** als Legosteine vor, dann besteht eine **Story**
+aus mehreren Steinen: Intents werden aufeinandergesteckt, wodurch eine
+Sequenz aus **Intents** und **Actions** entsteht. Bsp:
+
+```yml
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+```
 
 
 
