@@ -1,6 +1,4 @@
-# Chatbot mit Rasa Intro.
-
-## Setup
+# Chatbot mit Rasa - Setup
 
 
 1. Virtual Environment erstellen und aktivieren
@@ -48,9 +46,7 @@ rasa train
 ```
 (später interessant, wenn die Config-files geändert werden)
 
-## Die wichtigsten Config-files
-
-![Rasa Configs](rasa-configs.drawio.png)
+# Die wichtigsten Config-files
 
 ## nlu.yml
 
@@ -90,7 +86,26 @@ Sequenz aus **Intents** und **Actions** entsteht. Bsp:
   - intent: mood_great
   - action: utter_happy
 ```
+# Utterances
+Text der direkt vom Chatbot zurückgegeben wird.
 
+# Action
+Triggert ein selbst programmiertes Action-Event. Diese Actions werden beispielsweise
+in der Datei ```actions.py``` abgelegt. Die Datei wird dann beim Starten des 
+**Rasa Actions Server** als Modul(?) dazugeladen.
 
+# Entities
+
+Eine **Entity** hat einen _Namen_ und einen _Type_. Bsp:
+```yml
+[Michael](student_name)
+
+[Michael] -> Name
+(student_name) -> Type
+```
+
+# Slots
+
+Ein Slot ist wie eine Entity, aber **'long lived'**.
 
 
