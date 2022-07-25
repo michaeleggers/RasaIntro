@@ -10,12 +10,12 @@ source rasa-venv/bin/activate
 #### Windows (CMD)
 ```
 python3 -m venv rasa-venv
-rasa-env\Scripts\activate.bat
+rasa-venv\Scripts\activate.bat
 ```
 #### Windows (Git Bash)
 ```
 python3 -m venv rasa-venv
-source ./rasa-env/Scripts/activate
+source ./rasa-venv/Scripts/activate
 ```
 
 2. Installiere Rasa
