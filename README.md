@@ -13,13 +13,15 @@ source rasa-venv/bin/activate
 Achtung: Es muss **mindestens MacOS Version 12.0** installiert sein, da es keine
 vorkompilierten Pakete von TensorFlow für frühere Versionen von MacOS+Apple Silicon gibt!
 
-1. Dependencies mit brew installieren:
+1. Homebrew installieren. Dazu dieser Anleitung folgen:
+   https://brew.sh/index_de
+2. Dependencies mit brew installieren:
    ```
    brew install libpq libxml2 libxmlsec1 pkg-config postgresql
    ```
-2. Miniconda herunterladen und installieren:
+3. Miniconda herunterladen und installieren:
    https://docs.conda.io/en/latest/miniconda.html -> 	Miniconda3 macOS Apple M1 64-bit pkg
-3. Im Ordner, in dem Rasa installiert werden soll, sicherstellen, dass keine virtuelle Umgebung
+4. Im Ordner, in dem Rasa installiert werden soll, sicherstellen, dass keine virtuelle Umgebung
    aktiv ist:
    ```
    conda deactivate
@@ -32,24 +34,24 @@ vorkompilierten Pakete von TensorFlow für frühere Versionen von MacOS+Apple Si
    ```
    (base) michaeleggers@mbair chatbot % 
    ```
-4. Die Datei [env.yml](./env.yml) aus diesem Repository in den Ordner kopieren, in dem Rasa
+5. Die Datei [env.yml](./env.yml) aus diesem Repository in den Ordner kopieren, in dem Rasa
    installiert werden soll.
 
-5. Die Virtuelle Umgebung starten und Dependencies herunterladen:
+6. Die Virtuelle Umgebung starten und Dependencies herunterladen:
    ```
    conda env create -v --name myrasabot -f env.yml
    ```
-6. Aktivieren des Virtuellen Environments:
+7. Aktivieren des Virtuellen Environments:
    ```
    conda activate myrasabot
    ```
-7. Einige Dependencies müssen manuell heruntergeladen und installiert werden:
+8. Einige Dependencies müssen manuell heruntergeladen und installiert werden:
    ```
    pip install git+https://github.com/vpol/text.git --no-deps
    pip install git+https://github.com/RasaHQ/rasa-sdk@3.0.2 --no-deps
    pip install git+https://github.com/RasaHQ/rasa.git@3.0.4 --no-deps
    ```
-8. Rasa initialisieren und starten:
+9.  Rasa initialisieren und starten:
    ```
    python -m rasa init
    python -m rasa train
