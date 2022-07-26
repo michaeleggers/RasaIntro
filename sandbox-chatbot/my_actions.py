@@ -25,6 +25,17 @@ class ActionCheckStudentsExistence(Action):
                 else:
                     dispatcher.utter_message(text="not found")
         return []
+
+class ActionRestaurantForm(Action):
+        
+    def name(self) -> Text:
+        return "restaurant_form"
+    
+    async def run(self, dispatcher, tracker: Tracker, domain: Dict[Text, Any],) -> List[Dict[Text, Any]]:
+        for blob in tracker.latest_message['entities']:
+            print(tracker.latest_message)
+            
+        return []
     
 
 

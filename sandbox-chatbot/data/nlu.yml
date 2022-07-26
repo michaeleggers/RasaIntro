@@ -1,7 +1,7 @@
 version: "3.1"
 
 nlu:
-- lookup: student_name
+- lookup: lookup_students
   examples: |
     - students.txt
 
@@ -109,3 +109,8 @@ nlu:
   examples: |
     - is [Michael](student_name) a student?
     - can [Sven](student_name) program a Chatbot?
+
+- intent: request_restaurant
+  examples: |
+    - I want to eat [Aa-Zz](cuisine) with [0-9](number).
+    - I like [chinese](cuisine) and I want to bring [0-9](number).

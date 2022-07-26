@@ -2,6 +2,7 @@ version: "3.1"
 
 actions:
   - action_check_students_existence
+  - restaurant_form
 
 intents:
   - greet
@@ -14,9 +15,12 @@ intents:
   - mucdai
   - id
   - confirm_student_exists
+  - request_restaurant
 
 entities:
   - student_name
+  - cuisine
+  - number
 
 responses:
   utter_greet:
@@ -47,6 +51,26 @@ responses:
   utter_id_ask_back:
   - text: "Do you want to know specifics about the Informatics or Design part?"
 
+  utter_ask_restaurant_form_cuisine:
+    - text: "What kind of food do you want to eat and with how many ppl do you wanna come?"
+  
+slots:
+  cuisine:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: cuisine
+  num_people:
+    type: any
+    mappings:
+      - type: from_entity
+        entity: number
+
+forms:
+  restaurant_form:
+    required_slots:
+      - cuisine
+      - num_people
 
 session_config:
   session_expiration_time: 60

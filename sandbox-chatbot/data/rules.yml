@@ -11,3 +11,9 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Activate Form
+  steps:
+    - intent: request_restaurant
+    - action: restaurant_form
+    - active_loop: restaurant_form
