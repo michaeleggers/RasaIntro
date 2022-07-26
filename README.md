@@ -33,7 +33,7 @@ vorkompilierten Pakete von TensorFlow für frühere Versionen von MacOS+Apple Si
    ```
    (base) michaeleggers@mbair chatbot % 
    ```
-5. Die Datei [env.yml](./env.yml) aus diesem Repository in den Ordner kopieren, in dem Rasa
+5. Die Datei [env.yml](./macos/env.yml) aus diesem Repository in den Ordner kopieren, in dem Rasa
    installiert werden soll.
 
 6. Die Virtuelle Umgebung starten und Dependencies herunterladen:
