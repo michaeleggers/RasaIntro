@@ -1,14 +1,13 @@
 # Chatbot mit Rasa - Setup
 
 
-1. Virtual Environment erstellen und aktivieren
-#### MacOS (funktioniert **nicht** auf Apple Silicon)
+# MacOS (funktioniert **nicht** auf Apple Silicon)
 ```
 python -m venv rasa-venv
 source rasa-venv/bin/activate
 ```
 
-#### MacOS mit Apple Silicon
+# MacOS mit Apple Silicon
 
 Achtung: Es muss **mindestens MacOS Version 12.0** installiert sein, da es keine
 vorkompilierten Pakete von TensorFlow für frühere Versionen von MacOS+Apple Silicon gibt!
@@ -51,37 +50,45 @@ vorkompilierten Pakete von TensorFlow für frühere Versionen von MacOS+Apple Si
    pip install git+https://github.com/RasaHQ/rasa-sdk@3.0.2 --no-deps
    pip install git+https://github.com/RasaHQ/rasa.git@3.0.4 --no-deps
    ```
-9.  Rasa initialisieren und starten:
+9. Rasa initialisieren und starten:
    ```
    python -m rasa init
    python -m rasa train
    python -m rasa shell
    ```
 
-#### Windows (CMD)
+# Windows
+
+**Achtung**: Rasa läuft offiziell mit Python Version >= 3.7 und < 3.10. Ich selbst habe
+es nur mit Version 3.9 auf zwei verschiedenen Windows PCs zum Laufen gebracht!
+Die Version 3.9 wird mit der virtuellen Umgebung eingestellt, siehe unten.
+
+Miniconda installieren: https://docs.conda.io/en/latest/miniconda.html -> Miniconda3 Windows 64-bit
+
+Bei der Installation auswählen, dass nur für den **aktuellen User** installiert wird und
+im nächsten Dialogfenster die Option zum Setzen der **PATH** Systemvariable aktivieren.
+
+## Git Bash & CMD
+1. Virtuelle Umgebung erzeugen und aktivieren
 ```
-python3 -m venv rasa-venv
-rasa-venv\Scripts\activate.bat
+conda create -n rasa-venv python=3.9
 ```
-#### Windows (Git Bash)
+Bei der Frage, ob forgefahren werden soll, mit 'y'es bestätigen.
 ```
-python3 -m venv rasa-venv
-source ./rasa-venv/Scripts/activate
+conda activate rasa-venv
 ```
 
 2. Installiere Rasa
 ```
-python -m pip install rasa
+pip install rasa
 ```
 
 3. Initialisieren von Rasa
 ```
-python -m rasa init
+rasa init
 ```
-Bei Frage nach Projektpfad ```Yes```  (aktueller Pfad).
-Bei Frage, ob ein initiales Modell trainiert worden, ebenfalls ```Yes```.
 
-## Erster Start des Chatbots
+# Erster Start des Chatbots
 ```
 rasa shell
 ```
@@ -91,7 +98,7 @@ Starten des Chatbots mit Debug Info des Modell-Output:
 rasa shell nlu
 ```
 
-### Netz trainieren
+# Netz trainieren
 ```
 rasa train
 ```
