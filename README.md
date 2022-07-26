@@ -69,6 +69,7 @@ Bei der Installation auswählen, dass nur für den **aktuellen User** installier
 im nächsten Dialogfenster die Option zum Setzen der **PATH** Systemvariable aktivieren.
 
 ## Git Bash & CMD
+
 1. Virtuelle Umgebung erzeugen und aktivieren
 ```
 conda create -n rasa-venv python=3.9
