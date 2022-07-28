@@ -11,11 +11,11 @@ pipeline:
     dimensions:
       - number
   - name: DIETClassifier
-    epochs: 1
+    epochs: 21
   - name: EntitySynonymMapper
 
 policies:
   - name: TEDPolicy
-    epochs: 1
+    epochs: 21
   - name: AugmentedMemoizationPolicy
   - name: RulePolicy
