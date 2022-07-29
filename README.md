@@ -89,6 +89,10 @@ pip install rasa
 rasa init
 ```
 
+Git-Bash verhindert manchmal das Anlegen eines virtuellen environments. Hier ein paar links
+die helfen könnten:
+https://discuss.codecademy.com/t/setting-up-conda-in-git-bash/534473
+
 # Erster Start des Chatbots
 ```
 rasa shell
@@ -165,6 +169,10 @@ Eine **Entity** hat einen _Namen_ und einen _Type_. Bsp:
 
 # Slots
 
-Ein Slot ist wie eine Entity, aber **'long lived'**.
+Im Prinzip eine Map. Bilder Strings(?) auf eigene Datentypen ab.
+Wird in **Forms** genutzt um beispielsweise Abfragen zu erstellen: Ein Form
+hat ein oder mehrere Slots, welche nach und nach während der Kommunikation mit dem Bot
+gefüllt werden. 
+
 
 
