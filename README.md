@@ -169,10 +169,14 @@ Eine **Entity** hat einen _Namen_ und einen _Type_. Bsp:
 
 # Slots
 
-Im Prinzip eine Map. Bilder Strings(?) auf eigene Datentypen ab.
-Wird in **Forms** genutzt um beispielsweise Abfragen zu erstellen: Ein Form
+Im Prinzip eine Map. Bilden Strings(?) auf eigene Datentypen ab, das können selbst definierte **Entities** sein.
+Wird in **Forms** genutzt um beispielsweise Abfragen zu erstellen: Ein Form (s.u.)
 hat ein oder mehrere Slots, welche nach und nach während der Kommunikation mit dem Bot
 gefüllt werden. 
 
+# Forms
 
+Forms dienen zur Abfrage von Slots. Ein Form bleibt im Zustand **active** bis alle Slots
+durch den User "ausgefüllt" wurden. Beispiele: Bestellvorgang bei einer Pizzeria (welche Pizza,
+welche Toppings, Getränk?, etc.), Flugbuchung (von, nach, First- Business- oder Economyclass, extra Fußraum, etc.).
 
