@@ -12,7 +12,7 @@ entities:
   - choice
 
 slots:
-  choice:
+  choice_slot:
     type: categorical
     values:
       - rock

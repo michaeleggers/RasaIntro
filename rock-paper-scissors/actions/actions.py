@@ -34,7 +34,7 @@ class ActionPlayRPS(Action):
         print(tracker.latest_message)
 
         # play rock paper scissors
-        user_choice = tracker.get_slot("choice")
+        user_choice = tracker.get_slot("choice_slot")
         dispatcher.utter_message(text=f"You chose {user_choice}")
         comp_choice = self.computer_choice()
         dispatcher.utter_message(text=f"The computer chose {comp_choice}")
