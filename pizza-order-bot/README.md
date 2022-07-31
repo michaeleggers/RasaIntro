@@ -28,3 +28,7 @@ rasa interactive
   dass allein die korrekte Benamung ausreicht, bin mir aber nicht sicher.
 
 - Wann müssen paths in stories.yml und wann in rules.yml?
+
+# Quelle:
+
+- https://youtu.be/YYh1ECnlw9o
