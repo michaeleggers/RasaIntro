@@ -24,7 +24,18 @@ rules:
   steps:
     - action: simple_pizza_form
     - active_loop: null
-    - slot_was_set:
+    - slot_was_set: # this is like an if-statement
       - requested_slot: null
     - action: utter_submit
     - action: utter_pizza_slots
+
+# interruptions:
+- rule: interruption in pizza form
+  condition:
+  - active_loop: simple_pizza_form
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+    - action: simple_pizza_form
+    - active_loop: simple_pizza_form
+

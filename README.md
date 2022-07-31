@@ -149,6 +149,10 @@ Sequenz aus **Intents** und **Actions** entsteht. Bsp:
   - intent: mood_great
   - action: utter_happy
 ```
+
+Stories werden für das Training des Netzes benötigt. Der Bot kann nicht gut generalisieren,
+wenn es nicht für ähnliche Konversationspfade mehrere stories gibt. 
+
 # Utterances
 Text der direkt vom Chatbot zurückgegeben wird.
 

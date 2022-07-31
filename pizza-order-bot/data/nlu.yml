@@ -97,7 +97,7 @@ nlu:
     - I am starving!
     - Could I please order a pizza?
     - I really could use a slice of pizza now!
-  
+
 - intent: inform
   examples: |
     - I'd like a [large](pizza_size) pizza
@@ -107,3 +107,10 @@ nlu:
     - [pepperoni](pizza_type)
     - Can I have a [large](pizza_size), please?
     - I would love to have a [diavolo](pizza_type).
+
+- intent: stop
+  examples: |
+    - I've changed my mind. I don't want to order anymore.
+    - cancel order
+    - stop
+    - abort! now!

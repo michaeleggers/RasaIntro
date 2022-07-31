@@ -29,3 +29,15 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
+- story: user wants to abort the pizza ordering form
+  steps:
+    - intent: stop
+    - action: utter_ask_continue
+    - intent: affirm
+    - action: action_deactivate_loop # this is a default action: https://rasa.com/docs/rasa/default-actions/
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - intent: goodbye
+    - action: utter_goodbye
+
