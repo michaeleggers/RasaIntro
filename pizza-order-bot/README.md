@@ -29,6 +29,20 @@ rasa interactive
 
 - Wann müssen paths in stories.yml und wann in rules.yml?
 
+# Hinweise
+
+## Utterances
+
+Durch die Richtige Benamung der Utterances ist es oft nicht nötig
+explizit eine Story anzulegen. Beispiel:
+Der User sagt, sie/er möchte eine Pizza bestellen, wodurch das
+```simple_pizza_form``` gestartet wird. In der Story tauchen aber
+die Fragen des Bots ```utter_ask_pizza_size``` und ```utter_ask_pizza_type``` nicht
+explizit auf. Durch die Naming convention ```utter_ask``` + dem key des Slots
+triggert das Form dies utterance ```utter_ask_pizza_size``` automatisch. Besser gesagt kann Rasa zur Trainingszeit diese
+utterance nutzen. 
+
+
 # Quelle:
 
 - https://youtu.be/YYh1ECnlw9o
