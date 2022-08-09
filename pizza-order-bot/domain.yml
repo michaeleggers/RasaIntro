@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3.1"
 
 intents:
   - greet
@@ -79,7 +79,7 @@ actions:
   - utter_pizza_slots
   - utter_submit
   - validate_simple_pizza_form
-  - action_deactivate_loop
+  # - action_deactivate_loop
 
 session_config:
   session_expiration_time: 60

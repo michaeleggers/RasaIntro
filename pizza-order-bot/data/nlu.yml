@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3.1"
 
 nlu:
 - intent: greet
@@ -107,6 +107,9 @@ nlu:
     - [pepperoni](pizza_type)
     - Can I have a [large](pizza_size), please?
     - I would love to have a [diavolo](pizza_type).
+    - [hawaii](pizza_type)
+    - [funghi](pizza_type)
+    - [mozzarella](pizza_type)
 
 - intent: stop
   examples: |

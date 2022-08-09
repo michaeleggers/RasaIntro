@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3.1"
 
 rules:
 
@@ -22,14 +22,16 @@ rules:
   condition:
     - active_loop: simple_pizza_form
   steps:
-    - action: simple_pizza_form
-    - active_loop: null
-    - slot_was_set: # this is like an if-statement
-      - requested_slot: null
+    # - action: simple_pizza_form
+    - action: action_deactivate_loop
+    # - active_loop: null
+    # - slot_was_set: # this is like an if-statement
+      # - requested_slot: null
     - action: utter_submit
     - action: utter_pizza_slots
+    # - active_loop: null
 
-# interruptions:
+# interruptions (user says something that doesn't match the forms utterances):
 - rule: interruption in pizza form
   condition:
   - active_loop: simple_pizza_form
