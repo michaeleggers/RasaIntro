@@ -1,4 +1,4 @@
-version: "3.1"
+version: "3.0"
 
 intents:
   - greet
@@ -39,7 +39,7 @@ forms:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! I am the Pizza-order-bot. What can I do for you?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -70,7 +70,7 @@ responses:
   - text: Do you want to continue with the order?
 
   utter_submit:
-  - text: Not sure why this is here.
+  - text: OK, cool. Good choice!
 
 actions:
   - utter_ask_continue
