@@ -6,6 +6,12 @@ rules:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_restart
+
+
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
@@ -15,6 +21,13 @@ rules:
 - rule: activate pizza form
   steps:
     - intent: buy_pizza
+    - action: simple_pizza_form
+    - active_loop: simple_pizza_form
+
+- rule: activate pizza form 2
+  steps:
+    - intent: hungry
+    - action: utter_i_feel_you
     - action: simple_pizza_form
     - active_loop: simple_pizza_form
 

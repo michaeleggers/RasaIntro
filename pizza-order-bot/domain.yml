@@ -12,10 +12,12 @@ intents:
   - request_pizza_form
   - inform
   - stop
+  - hungry
 
 entities:
   - pizza_size
   - pizza_type
+  - number
 
 slots:
   pizza_size:
@@ -68,6 +70,9 @@ responses:
 
   utter_ask_continue:
   - text: Do you want to continue with the order?
+
+  utter_i_feel_you:
+  - text: I feel you!
 
   utter_submit:
   - text: OK, cool. Good choice!

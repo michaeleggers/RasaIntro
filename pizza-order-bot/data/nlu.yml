@@ -109,7 +109,12 @@ nlu:
     - I would love to have a [diavolo](pizza_type).
     - [hawaii](pizza_type)
     - [funghi](pizza_type)
-    - [mozzarella](pizza_type)
+    - [mozzarella](pizza_type)s
+
+- intent: hungry
+  examples: |
+    - I'm hungry
+    - I could eat [0-9](number) pizzas at once
 
 - intent: stop
   examples: |
