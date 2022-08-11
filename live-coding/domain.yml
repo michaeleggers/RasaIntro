@@ -1,0 +1,82 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - order_pizza
+  - request_form
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_submit:
+  - text: "OK! I am going to submit your order"
+
+  utter_pizza_slots:
+  - text: "I hope you're going to enjoy your {pizza_size} {pizza_type}"
+
+  utter_ask_pizza_size:
+  - text: "What size would you like your pizza to be"
+  - text: "What size?"
+
+  utter_ask_pizza_type:
+  - text: "What kind of pizza do you want?"
+  - text: "What kind of pizza do you want, dude?"
+
+entities:
+  - pizza_size
+  - pizza_type
+
+slots:
+  pizza_size:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: pizza_size
+  pizza_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: pizza_type
+
+forms:
+  pizza_form:
+    required_slots:
+    - pizza_size
+    - pizza_type
+
+actions:
+  - utter_goodbye
+  - utter_greet
+  - utter_pizza_slots
+  - utter_submit
+  - validate_simple_pizza_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
