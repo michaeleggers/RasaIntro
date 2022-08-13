@@ -1,3 +1,5 @@
 **/.rasa/*
 **/models/*
 **/__pycache__/*
+**/rasa-venv/*
+**/.idea/*
