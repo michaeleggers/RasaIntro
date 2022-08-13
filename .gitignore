@@ -3,3 +3,5 @@
 **/__pycache__/*
 **/rasa-venv/*
 **/.idea/*
+**/.config/*
+**/.keras/*

@@ -70,6 +70,12 @@ im nächsten Dialogfenster die Option zum Setzen der **PATH** Systemvariable akt
 
 ## Git Bash & CMD
 
+### Extra Schritt für Git Bash
+Conda für bash initialisieren:
+```
+conda init bash
+```
+
 1. Virtuelle Umgebung erzeugen und aktivieren
 ```
 conda create -n rasa-venv python=3.9
@@ -189,3 +195,72 @@ Sobald alles Slots bedient wurden, wechselt das Form in den **inactive** Zustand
 schickt und die Bestellung aufgibt.
 Solange die Slots noch nicht vollständig ausgefüllt wurden, spricht man
 von einer **loop**.
+
+# Deployment via Docker
+
+## Actions Server Image erstellen:
+1. Dockerfile erstellen:
+
+```Dockerfile
+# Extend the official Rasa SDK image
+FROM rasa/rasa-sdk:undefined
+
+# Use subdirectory as working directory
+WORKDIR /app
+
+# Copy any additional custom requirements, if necessary (uncomment next line)
+# COPY actions/requirements-actions.txt ./
+
+# Change back to root user to install dependencies
+USER root
+
+# Install extra requirements for actions code, if necessary (uncomment next line)
+# RUN pip install -r requirements-actions.txt
+
+# Copy actions folder to working directory
+COPY ./actions /app/actions
+
+# By best practices, don't run the code with root user
+USER 1001
+```
+
+Das ```undefined``` des Image-tags muss ersetzt werden durch die gewünschte
+Versionsnummer des Images. Weglassen für neuestes Image
+
+2. Actions-Server Image bauen:
+```
+docker build . -t <account_username>/<repository_name>:<custom_image_tag>
+```
+
+```account_username``` und ```repository_name``` sind die Daten
+des Images auf Dockerhub, falls es dort gehostet sind. Ansonsten
+kann man sich etwas ausdenken. Ist aber dann nur lokal und andere
+User müssen das Image erst selbst bauen. ```custom_image_tag```
+enthält üblicherweise eine Versionsnummer des Images.
+
+
+3. Lokal Starten:
+
+```
+docker-compose up
+```
+
+4. Requests an Rasa schicken (Postman empfiehlt sich: https://www.postman.com/downloads/)
+
+Methode: POST
+Header: ```application/json```
+
+Payload:
+```
+{"sender": "test", "message": "hello"}
+```
+
+Wenn alles funktioniert, liefert Rasa ein JSON zurück.
+
+Original Rasa-Docs zu diesem Thema: 
+- https://rasa.com/docs/rasa/docker/deploying-in-docker-compose/
+- https://rasa.com/docs/action-server/deploy-action-server/#manually-building-an-action-server
+
+## Depolyment
+
+TODO

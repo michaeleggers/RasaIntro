@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3.1"
 
 nlu:
 - intent: greet
@@ -90,35 +90,15 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-- intent: buy_pizza
+- intent: request_form
   examples: |
-    - I love pizza
-    - I want to order a pizza
-    - I am starving!
-    - Could I please order a pizza?
-    - I really could use a slice of pizza now!
+    - I am hungry
+    - I need pizza ASAP!!
 
-- intent: inform
+- intent: order_pizza
   examples: |
-    - I'd like a [large](pizza_size) pizza
-    - [large](pizza_size)
-    - [medium](pizza_size)
-    - [small](pizza_size)
-    - [pepperoni](pizza_type)
-    - Can I have a [large](pizza_size), please?
-    - I would love to have a [diavolo](pizza_type).
-    - [hawaii](pizza_type)
-    - [funghi](pizza_type)
-    - [mozzarella](pizza_type)s
+    - I want a [large](pizza_size)
+    - [l](pizza_size)
+    - [Aa-Zz](pizza_type)
+    - [fungi](pizza_type)
 
-- intent: hungry
-  examples: |
-    - I'm hungry
-    - I could eat [0-9](number) pizzas at once
-
-- intent: stop
-  examples: |
-    - I've changed my mind. I don't want to order anymore.
-    - cancel order
-    - stop
-    - abort! now!

@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+  rasa:
+    image: rasa/rasa:3.2.5-full
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    command:
+      - run
+
+  app:
+  # if pulled from a repo (eg. docker hub) the image name must be username:repo-name
+    image: pythno/pizza-bot:rasa-actions-v0.0.1
+    expose: ["5055"]
