@@ -6,7 +6,11 @@
 python -m venv rasa-venv
 source rasa-venv/bin/activate
 ```
-
+```
+pip3 install -U pip && pip3 install rasa
+```
+```
+```
 # MacOS mit Apple Silicon
 
 Achtung: Es muss **mindestens MacOS Version 12.0** installiert sein, da es keine
@@ -100,6 +104,8 @@ die helfen könnten:
 https://discuss.codecademy.com/t/setting-up-conda-in-git-bash/534473
 
 # Erster Start des Chatbots
+
+Chatbot ausführen
 ```
 rasa shell
 ```
