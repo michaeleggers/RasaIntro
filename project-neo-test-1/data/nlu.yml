@@ -1,21 +1,18 @@
 version: "3.1"
 
 nlu:
+
 - intent: greet
   examples: |
     - hey
     - hello
     - hi
-    - hello there
-    - good morning
-    - good evening
+    - hallo
+    - servus
     - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - Was geht?
+    - Grias di
+    - Habe die Ehre
 
 - intent: goodbye
   examples: |
@@ -29,6 +26,10 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - ciao
+    - servus
+    - Tschau
+    - Tschüss
 
 - intent: affirm
   examples: |
@@ -36,8 +37,11 @@ nlu:
     - y
     - indeed
     - of course
-    - that sounds good
+    - sounds good
     - correct
+    - klar
+    - Ja
+    - korrekt
 
 - intent: deny
   examples: |
@@ -48,6 +52,11 @@ nlu:
     - don't like that
     - no way
     - not really
+    - nein
+    - nö
+    - nope
+    - ne
+    - nee
 
 - intent: mood_great
   examples: |
@@ -65,6 +74,8 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - super
+    - toll
 
 - intent: mood_unhappy
   examples: |
@@ -82,6 +93,11 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - schlecht
+    - traurig
+    - alles blöd
+    - kein bock
+
 
 - intent: bot_challenge
   examples: |
@@ -89,3 +105,4 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+

@@ -1,0 +1,9 @@
+version: "3.1"
+
+nlu:
+  - intent: university_content
+    examples: |
+      - people
+      - the others
+      - humans
+      - colleagues
