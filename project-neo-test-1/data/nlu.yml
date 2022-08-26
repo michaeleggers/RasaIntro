@@ -1,6 +1,15 @@
 version: "3.1"
 
 nlu:
+- intent: university_content
+  examples: |
+    - content
+    - courses
+    - studies
+
+- intent: inform
+  examples: |
+    - [notebook](skills_study_organization)
 
 - intent: greet
   examples: |
