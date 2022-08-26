@@ -45,6 +45,8 @@ responses:
   - text: "What's going well at university?"
   utter_ask_slot_study_organization:
   - text: "How do you organize your studies?"
+  utter_form_study_organization_sumup:
+  - text: "You organize your studies with {slot_study_organization}"
 
 session_config:
   session_expiration_time: 60

@@ -29,6 +29,6 @@ stories:
       - active_loop: form_study_organization
       - slot_was_set:
           - requested_slot: skills_study_organization
+      - action: utter_form_study_organization_sumup
       - action: utter_goodbye
-
 
