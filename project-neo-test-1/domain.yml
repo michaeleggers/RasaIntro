@@ -12,7 +12,7 @@ intents:
   - inform
 
 entities:
-  - skills_study_organization
+  - study_organization
 
 slots:
   slot_study_organization:
@@ -20,7 +20,7 @@ slots:
     influence_conversation: true
     mappings:
       - type: from_entity
-        entity: skills_study_organization
+        entity: study_organization
 
 forms:
   form_study_organization:

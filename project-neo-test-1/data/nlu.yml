@@ -9,8 +9,8 @@ nlu:
 
 - intent: inform
   examples: |
-    - [notebook](skills_study_organization)
-    - [laptop](skills_study_organization)
+    - [notebook](study_organization)
+    - [laptop](study_organization)
 
 - intent: greet
   examples: |
