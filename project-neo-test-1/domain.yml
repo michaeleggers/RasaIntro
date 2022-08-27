@@ -9,7 +9,7 @@ intents:
   - mood_unhappy
   - bot_challenge
   - university_content
-  - inform
+  - inform_study_organization
 
 entities:
   - study_organization
