@@ -7,10 +7,10 @@ nlu:
     - courses
     - studies
 
-- intent: inform
+- intent: inform_study_organization
   examples: |
-    - [notebook](skills_study_organization)
-    - [laptop](skills_study_organization)
+    - [notebook](study_organization)
+    - [laptop](study_organization)
 
 - intent: greet
   examples: |
