@@ -12,6 +12,7 @@ intents:
   - university_colleagues
   - inform_study_organization
   - inform_study_communication
+  - inform_study_whats_good
 
 entities:
   - study_whats_good
