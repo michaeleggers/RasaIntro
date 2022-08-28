@@ -21,7 +21,7 @@ entities:
 
 slots:
   study_whats_good:
-    type: text
+    type: list
     influence_conversation: true
     mappings:
       - type: from_entity

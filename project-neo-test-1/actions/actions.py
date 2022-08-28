@@ -19,7 +19,6 @@ class ActionHelloWorld(Action):
         return "custom_find_course_path"
 
     def run(self, dispatcher, tracker, domain):
-        print("foo")
-        # dispatcher.utter_message(text="utter_ask_study_organization")
-        # return []
+        study_whats_good_list = tracker.get_slot("study_whats_good")
+        # TODO: trigger correct form by study_whats_good_list input
         return [FollowupAction(name="form_study_organization")]

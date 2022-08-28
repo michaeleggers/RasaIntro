@@ -21,7 +21,7 @@ version: "3.1"
 
 stories:
 
-  - story: greet and find path by custom action
+  - story: Greet and ask what's going well at university
     steps:
       - intent: greet
       - action: form_study_whats_good
@@ -31,7 +31,7 @@ stories:
       - active_loop: null
       - action: custom_find_course_path
 
-  - story: Check courses
+  - story: Check course organization
     steps:
       - action: form_study_organization
       - active_loop: form_study_organization
@@ -41,7 +41,7 @@ stories:
       - action: utter_form_study_organization_sumup
       - action: utter_goodbye
 
-  - story: check_course_2
+  - story: Check course communication
     steps:
       - action: form_study_communication
       - active_loop: form_study_communication
