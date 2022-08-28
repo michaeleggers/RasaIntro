@@ -7,10 +7,21 @@ nlu:
     - courses
     - studies
 
+- intent: university_colleagues
+  examples: |
+    - colleauges
+    - students
+    - other students
+
 - intent: inform_study_organization
   examples: |
     - [notebook](study_organization)
     - [laptop](study_organization)
+
+- intent: inform_study_communication
+  examples: |
+    - [discord](study_communication)
+    - [email](study_communication)
 
 - intent: greet
   examples: |

@@ -9,23 +9,42 @@ intents:
   - mood_unhappy
   - bot_challenge
   - university_content
+  - university_colleagues
   - inform_study_organization
+  - inform_study_communication
 
 entities:
   - study_organization
+  - study_communication
 
 slots:
-  slot_study_organization:
+  study_organization:
     type: list
     influence_conversation: true
     mappings:
       - type: from_entity
         entity: study_organization
+#        conditions:
+#          - active_loop: form_study_organization
+#            requested_slot: study_organization
+  study_communication:
+    type: list
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: study_communication
+#        conditions:
+#          - active_loop: form_study_communication
+#            requested_slot: study_communication
 
 forms:
   form_study_organization:
     required_slots:
-      - slot_study_organization
+      - study_organization
+  form_study_communication:
+    required_slots:
+      - study_communication
+
 
 responses:
   utter_greet:
@@ -43,10 +62,15 @@ responses:
   - text: "I am a bot, powered by Rasa."
   utter_ask_whats_going_well_at_university:
   - text: "What's going well at university?"
-  utter_ask_slot_study_organization:
+  utter_ask_study_organization:
   - text: "How do you organize your studies?"
+  utter_ask_study_communication:
+  - text: "How do you communicate with other students?"
   utter_form_study_organization_sumup:
-  - text: "You organize your studies with {slot_study_organization}"
+  - text: "You organize your studies with {study_organization}"
+  utter_form_study_communication_sumup:
+  - text: "You communicate with {study_communication}"
+
 
 session_config:
   session_expiration_time: 60
