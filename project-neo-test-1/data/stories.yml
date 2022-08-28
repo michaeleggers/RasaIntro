@@ -20,11 +20,19 @@ version: "3.1"
 #  - action: utter_happy
 
 stories:
-  - story: check_course_1
+
+  - story: greet and find path by custom action
     steps:
       - intent: greet
-      - action: utter_ask_whats_good_at_university
-      - intent: university_content
+      - action: form_study_whats_good
+      - active_loop: form_study_whats_good
+      - slot_was_set:
+          - requested_slot: study_whats_good
+      - active_loop: null
+      - action: custom_find_course_path
+
+  - story: Check courses
+    steps:
       - action: form_study_organization
       - active_loop: form_study_organization
       - slot_was_set:
@@ -33,17 +41,14 @@ stories:
       - action: utter_form_study_organization_sumup
       - action: utter_goodbye
 
-#  - story: check_course_2
-#    steps:
-#      - intent: greet
-#      - action: utter_ask_whats_good_at_university
-#      - intent: university_colleagues
-#      - action: form_study_communication
-#      - active_loop: form_study_communication
-#      - slot_was_set:
-#          - requested_slot: study_communication
-#      - active_loop: null
-#      - action: utter_form_study_communication_sumup
-#      - action: utter_goodbye
+  - story: check_course_2
+    steps:
+      - action: form_study_communication
+      - active_loop: form_study_communication
+      - slot_was_set:
+          - requested_slot: study_communication
+      - active_loop: null
+      - action: utter_form_study_communication_sumup
+      - action: utter_goodbye
 
 

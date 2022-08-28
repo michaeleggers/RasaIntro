@@ -14,30 +14,34 @@ intents:
   - inform_study_communication
 
 entities:
+  - study_whats_good
   - study_organization
   - study_communication
 
 slots:
+  study_whats_good:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: study_whats_good
   study_organization:
     type: list
     influence_conversation: true
     mappings:
       - type: from_entity
         entity: study_organization
-#        conditions:
-#          - active_loop: form_study_organization
-#            requested_slot: study_organization
   study_communication:
     type: list
     influence_conversation: true
     mappings:
       - type: from_entity
         entity: study_communication
-#        conditions:
-#          - active_loop: form_study_communication
-#            requested_slot: study_communication
 
 forms:
+  form_study_whats_good:
+    required_slots:
+      - study_whats_good
   form_study_organization:
     required_slots:
       - study_organization
@@ -71,6 +75,8 @@ responses:
   utter_form_study_communication_sumup:
   - text: "You communicate with {study_communication}"
 
+actions:
+  - custom_find_course_path
 
 session_config:
   session_expiration_time: 60
