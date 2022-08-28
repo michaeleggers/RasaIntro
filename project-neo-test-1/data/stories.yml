@@ -23,7 +23,7 @@ stories:
   - story: check_course_1
     steps:
       - intent: greet
-      - action: utter_ask_whats_going_well_at_university
+      - action: utter_ask_whats_good_at_university
       - intent: university_content
       - action: form_study_organization
       - active_loop: form_study_organization
@@ -33,17 +33,17 @@ stories:
       - action: utter_form_study_organization_sumup
       - action: utter_goodbye
 
-  - story: check_course_2
-    steps:
-      - intent: greet
-      - action: utter_ask_whats_going_well_at_university
-      - intent: university_colleagues
-      - action: form_study_communication
-      - active_loop: form_study_communication
-      - slot_was_set:
-          - requested_slot: study_communication
-      - active_loop: null
-      - action: utter_form_study_communication_sumup
-      - action: utter_goodbye
+#  - story: check_course_2
+#    steps:
+#      - intent: greet
+#      - action: utter_ask_whats_good_at_university
+#      - intent: university_colleagues
+#      - action: form_study_communication
+#      - active_loop: form_study_communication
+#      - slot_was_set:
+#          - requested_slot: study_communication
+#      - active_loop: null
+#      - action: utter_form_study_communication_sumup
+#      - action: utter_goodbye
 
 
