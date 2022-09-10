@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RasaChat</title>
+
+<style>
+#chronic {
+	  background-color: yellow;
+	  width: 300px;
+	  border: 15px solid darkorange;
+	  padding: 10px;
+	  border-radius: 25px;
+}
+#user {
+	line-height: 2.5;
+	color:black;
+	background-color: gold;
+	border: 2px solid black;
+	border-radius: 10px; 
+	padding: 5px;
+}
+#bot {
+	line-height: 2.5;
+	color: black;
+	background-color: goldenrod;
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 5px;
+}
+</style>
+
+
+<meta charset="UTF-8"> 
+<script language="JavaScript">
+
+	const chronic = new Array();
+	
+</script>
+</head>
+
+<body>
+	<header class="header">
+		<h2><p class="title">Rasa Chatbot</p></h2>
+	</header>
+	
+	<!--- Chatverlauf --->
+	<div id = 'chronic'>
+		<!--- Input field ---> 
+		<div id = 'messageinput'>
+			<label><b>Enter Message:</b></br></label>
+			<input type="text" name="message" id="user_input" onblur="this.focus()" auto-focus>
+			<button onclick="transceive_message();">Send</button>
+		</div>
+	</div>
+	
+	<script language="JavaScript">	
+	// handle communication and responses
+	function transceive_message() 
+	{
+		var user_input_value = document.getElementById("user_input").value;
+				
+		// Fill chatchronic with user input and display it orderly on page
+		chronic.push(user_input_value);
+		document.querySelector('#messageinput').insertAdjacentHTML('beforebegin', '<p style="text-align: right;"><span id="user">' + chronic[chronic.length-1] + '</span></p>');
+		
+		// initialze data in incoming format
+		var data = { "sender":"user", "message":""};
+		data.message = user_input_value; 
+
+		console.log(data); 
+
+		// Send a POST message to the server and handle the response
+		fetch('http://0.0.0.0:5005/webhooks/rest/webhook', {
+		  	method: 'POST', // or 'PUT'
+		  	headers: {
+			      'Content-Type': 'application/json',
+			},
+		  	body: JSON.stringify(data),
+			})
+	  		.then((response) => response.json())
+	  		.then((data) => {
+		      	console.log('Success:', data);
+			
+			// Fill chatchronic with bot answers and display them through new html elements	
+			for(let i=0; i < data.length; i++)
+			{
+			// Text
+			if(data[i].text !== undefined)
+			{
+				chronic.push(data[i].text);
+				document.querySelector('#messageinput').insertAdjacentHTML('beforebegin', '<p style="text-align: left;"><span id="bot">' + data[i].text + '</span></p>');
+			}
+			// Image
+			else if (data[i].image !== undefined)
+			{
+				var img = new Image();
+				img.src = data[i].image;
+				document.querySelector('#messageinput').insertAdjacentHTML('beforebegin', '<img id="bot" src="' + data[i].image + '" width = "300" heigth = "300"/>');
+			}
+			}
+			})
+	  		.catch((error) => {
+		      	console.error('Error:', error);
+			});
+
+		console.log(chronic.length);
+		// Scroll to bottom
+		window.scrollTo(0, document.body.scrollHeight);
+		// Set focus back to input field and delete current value
+		document.getElementById('user_input').focus();
+		document.getElementById('user_input').value = '';
+
+	}
+
+	// Respond to the Enter-Key in input field
+	var input_field = document.getElementById('user_input'); 
+	input_field.addEventListener("keydown", function (e) {
+		if (e.code === "Enter") {
+			transceive_message(); 
+		}
+	});
+
+	</script>
+
+	<!-- Websocket connection, example script from rasa -->
+	<div id="rasa-chat-widget" data-websocket-url="http://0.0.0.0:5005/socket.io"></div>
+	<script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
+</body>
+</html>
