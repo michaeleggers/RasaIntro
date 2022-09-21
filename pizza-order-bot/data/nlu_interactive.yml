@@ -1,0 +1,17 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+- intent: buy_pizza
+  examples: |
+    - order pizza
+- intent: inform
+  examples: |
+    - [large](pizza_size)
+- intent: stop
+  examples: |
+    - cancel order
+- intent: deny
+  examples: |
+    - no
