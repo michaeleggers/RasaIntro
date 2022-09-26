@@ -1,4 +1,4 @@
-FROM rasa/rasa:3.2.5-full
+FROM rasa/rasa:latest
 
 WORKDIR '/app'
 COPY . /app
@@ -20,6 +20,7 @@ RUN rasa train
 # RUN sudo pip3 install -U --user pip && sudo pip3 install rasa
 
 EXPOSE 5005
+EXPOSE 5055
 USER 1001
 
-CMD ["run","-m","/app/models","--enable-api","--cors","*","--debug" ,"--endpoints", "endpoints.yml", "--log-file", "out.log", "--debug"]
+CMD ["run","-m","/app/models","--enable-api","--cors","*","--debug" ,"--endpoints", "/app/endpoints.yml", "--log-file", "out.log", "--debug"]

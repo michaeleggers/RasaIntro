@@ -1,0 +1,12 @@
+FROM continuumio/miniconda3
+
+WORKDIR '/app'
+COPY . /app
+
+RUN conda create --name rasaenv
+
+RUN .bashrc
+
+
+RUN conda activate rasaenv
+RUN pip install rasa
