@@ -14,10 +14,10 @@ action_endpoint:
 #  url: "http://localhost:5055/webhook"
 
  # use this for docker:
-#  url: "http://app:5055/webhook"
+ url: "http://app:5055/webhook"
 
  # use this for AWS
- url: "http://EC2Co-EcsEl-1BD2O70N33KR1-2085240988.eu-west-1.elb.amazonaws.com:5055/webhook"
+#  url: "http://EC2Co-EcsEl-1BD2O70N33KR1-2085240988.eu-west-1.elb.amazonaws.com:5055/webhook"
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.

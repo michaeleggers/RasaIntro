@@ -23,4 +23,4 @@ EXPOSE 5005
 EXPOSE 5055
 USER 1001
 
-CMD ["run","-m","/app/models","--enable-api","--cors","*","--debug" ,"--endpoints", "/app/endpoints.yml", "--log-file", "out.log", "--debug"]
+CMD ["run","-m","/app/models","--enable-api","--cors","*","--debug", "--log-file", "out.log", "--debug"]

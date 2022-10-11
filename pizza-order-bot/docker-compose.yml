@@ -1,17 +1,23 @@
 version: '3.0'
 services:
   rasa:
-    image: pythno/rasa
-    build: .
+    image: rasa/rasa:3.2.5-full
+    volumes:
+      - ./:/app
+    command:
+      - train
+
+  rasaRun:
+    image: rasa/rasa:3.2.5-full
     ports:
       - "5005:5005"
     volumes:
       - ./:/app
     command:
       - run
+      - --enable-api
 
   app:
   # if pulled from a repo (eg. docker hub) the image name must be username:repo-name
-    image: pythno/rasa-actions
-    build: Dockerfiles/ActionServer
+    image: pythno/pizza-bot:rasa-actions-v0.0.1
     expose: ["5055"]
