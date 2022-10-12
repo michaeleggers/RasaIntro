@@ -3,8 +3,8 @@
 
 # MacOS (funktioniert **nicht** auf Apple Silicon)
 ```
-python -m venv rasa-venv
-source rasa-venv/bin/activate
+python -m venv rasaenv
+source rasaenv/bin/activate
 ```
 
 # MacOS mit Apple Silicon
@@ -38,11 +38,11 @@ vorkompilierten Pakete von TensorFlow für frühere Versionen von MacOS+Apple Si
 
 6. Die Virtuelle Umgebung starten und Dependencies herunterladen:
    ```
-   conda env create -v --name myrasabot -f env.yml
+   conda env create -v --name rasaenv -f env.yml
    ```
 7. Aktivieren des Virtuellen Environments:
    ```
-   conda activate myrasabot
+   conda activate rasaenv
    ```
 8. Einige Dependencies müssen manuell heruntergeladen und installiert werden:
    ```
@@ -78,11 +78,11 @@ conda init bash
 
 1. Virtuelle Umgebung erzeugen und aktivieren
 ```
-conda create -n rasa-venv python=3.9
+conda create -n rasaenv python=3.9
 ```
 Bei der Frage, ob forgefahren werden soll, mit 'y'es bestätigen.
 ```
-conda activate rasa-venv
+conda activate rasaenv
 ```
 
 2. Installiere Rasa
