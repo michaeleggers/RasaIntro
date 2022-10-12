@@ -159,7 +159,7 @@ Sequenz aus **Intents** und **Actions** entsteht. Bsp:
 Stories werden für das Training des Netzes benötigt. Der Bot kann nicht gut generalisieren,
 wenn es nicht für ähnliche Konversationspfade mehrere stories gibt. 
 
-# Utterances
+# Responses/Utterances/Templates
 Text der direkt vom Chatbot zurückgegeben wird.
 
 # Action
