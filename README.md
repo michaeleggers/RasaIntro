@@ -75,6 +75,8 @@ Conda für bash initialisieren:
 ```
 conda init bash
 ```
+Wenn Powershell verwendet wird, dann die Powershell schließen und wieder öffnen. Das Prompt sollte etwa so aussehen
+```(base) PS C:\Users\...>```
 
 1. Virtuelle Umgebung erzeugen und aktivieren
 ```
