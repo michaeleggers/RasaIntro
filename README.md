@@ -2,10 +2,25 @@
 
 
 # MacOS (funktioniert **nicht** auf Apple Silicon)
-```
-python -m venv rasaenv
-source rasaenv/bin/activate
-```
+
+1. Miniconda herunterladen und installieren:
+   https://docs.conda.io/en/latest/miniconda.html#macos-installers -> 	Miniconda3 macOS Intel x86 64-bit pkg
+2. Virtuelle Umgebung erzeugen und aktivieren
+   ```
+   conda create -n rasaenv python=3.9
+   ```
+   Bei der Frage, ob forgefahren werden soll, mit 'y'es bestätigen.
+   ```
+   conda activate rasaenv
+   ```
+3. Installiere Rasa
+   ```
+   pip install rasa
+   ```
+4. Initialisieren von Rasa
+   ```
+   rasa init
+   ```
 
 # MacOS mit Apple Silicon
 
@@ -19,7 +34,7 @@ vorkompilierten Pakete von TensorFlow für frühere Versionen von MacOS+Apple Si
    brew install libpq libxml2 libxmlsec1 pkg-config postgresql
    ```
 3. Miniconda herunterladen und installieren:
-   https://docs.conda.io/en/latest/miniconda.html -> 	Miniconda3 macOS Apple M1 64-bit pkg
+   https://docs.conda.io/en/latest/miniconda.html#macos-installers -> 	Miniconda3 macOS Apple M1 64-bit pkg
 4. Im Ordner, in dem Rasa installiert werden soll, sicherstellen, dass keine virtuelle Umgebung
    aktiv ist:
    ```
