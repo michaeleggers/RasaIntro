@@ -42,6 +42,11 @@ explizit auf. Durch die Naming convention ```utter_ask``` + dem key des Slots
 triggert das Form die utterance ```utter_ask_pizza_size``` automatisch. Besser gesagt kann Rasa zur Trainingszeit diese
 utterance nutzen. 
 
+## Rules vs. Stories
+
+- https://youtu.be/8gvGh6H2NO0
+- https://forum.rasa.com/t/my-simple-question-on-rules-and-stories/38690
+
 
 # Quelle:
 
