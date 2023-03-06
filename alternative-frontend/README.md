@@ -9,7 +9,7 @@ Then, start rasa (and optionally rasa actions).
 
 Some links to other frontends in this Rasa Forum Thread: https://forum.rasa.com/t/rasa-3-chatbot-integration-with-website/50193/2
 
-The example works like the mvg-bot but will ussue another action that displays
+The example works like the mvg-bot but will trigger another action that displays
 an embedded YouTube video inside the chat window.
 
 Additionally, the user is being greeted upon opening the chatwindow.
