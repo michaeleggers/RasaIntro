@@ -55,3 +55,24 @@ rules:
     - action: simple_pizza_form
     - active_loop: simple_pizza_form
 
+- rule: activate joke telling form
+  steps:
+    - intent: tell_joke
+    - action: utter_joke
+    - active_loop: yes_or_no_form
+
+- rule: continue telling jokes
+  condition:
+  - active_loop: yes_or_no_form
+  steps:
+    - action: utter_ask_more_jokes
+    - intent: tell_another_joke
+    - active_loop: yes_or_no_form
+
+- rule: stop telling jokes
+  condition:
+  - active_loop: yes_or_no_form
+  steps:
+    - intent: stop_telling_jokes
+    - active_loop: null
+

@@ -10,9 +10,12 @@ intents:
   - bot_challenge
   - buy_pizza
   - request_pizza_form
+  - yes_or_no_form
   - inform
   - stop
   - hungry
+  - tell_joke
+  - tell_another_joke
 
 entities:
   - pizza_size
@@ -32,12 +35,22 @@ slots:
     mappings:
       - type: from_entity
         entity: pizza_type
+  yes_or_no:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: yes_or_no
 
 forms:
   simple_pizza_form:
     required_slots:
       - pizza_size
       - pizza_type
+
+  yes_or_no_form:
+    required_slots:
+      - yes_or_no
 
 responses:
   utter_greet:
@@ -76,6 +89,12 @@ responses:
 
   utter_submit:
   - text: OK, cool. Good choice!
+
+  utter_joke:
+  - text: "Das ist ein lustiger Witz!"
+
+  utter_ask_more_jokes:
+  - text: "Do you want me to tell you another joke?"
 
 actions:
   - utter_ask_continue

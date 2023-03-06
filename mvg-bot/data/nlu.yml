@@ -16,6 +16,16 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - guten Tag
+    - Servus
+    - Hallo
+    - hallo
+
+- intent: greet_formal
+  examples: |
+    - guten Tag
+    - guten Abend
+
 
 - intent: goodbye
   examples: |
@@ -29,6 +39,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - Tschüss
 
 - intent: affirm
   examples: |
@@ -38,6 +49,11 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - ja
+    - jap
+    - yep
+    - genau
+    - korrekt
 
 - intent: deny
   examples: |
@@ -48,6 +64,8 @@ nlu:
     - don't like that
     - no way
     - not really
+    - nein
+    - ne
 
 - intent: mood_great
   examples: |
@@ -65,6 +83,8 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - super
+    - gut
 
 - intent: mood_unhappy
   examples: |
@@ -82,6 +102,7 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - schlecht
 
 - intent: bot_challenge
   examples: |
@@ -89,53 +110,32 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - wer bist du?
+    - bist du ein Mensch?
+    - spreche ich mit einem Chatbot?
 
-- intent: buy_pizza
+- intent: my_name_is
   examples: |
-    - I love pizza
-    - I want to order a pizza
-    - I am starving!
-    - Could I please order a pizza?
-    - I really could use a slice of pizza now!
+    - Ich heiße [Gudrun](username)
+    - Ich bin [Tina](username)
+    - [Thomas](username)
+    - Mein Name ist [Anna](username)
+    - Ich bin der [Horst](username)
+    - [Hans](username)
 
-- intent: inform
+- intent: bot_challenge_name
   examples: |
-    - I'd like a [large](pizza_size) pizza
-    - [large](pizza_size)
-    - [medium](pizza_size)
-    - [small](pizza_size)
-    - [pepperoni](pizza_type)
-    - Can I have a [large](pizza_size), please?
-    - I would love to have a [diavolo](pizza_type).
-    - [hawaii](pizza_type)
-    - [funghi](pizza_type)
-    - [mozzarella](pizza_type)s
+    - Wer bin ich?
+    - Wie heisse ich?
+    - Erinnerst du dich an meinen Namen?
 
-- intent: hungry
+- intent: ask_travel_time
   examples: |
-    - I'm hungry
-    - I could eat [0-9](number) pizzas at once
-
-- intent: stop
-  examples: |
-    - I've changed my mind. I don't want to order anymore.
-    - cancel order
-    - stop
-    - abort! now!
-
-- intent: tell_joke
-  examples: |
-    - Tell me a joke
-    - Tell me something funny
-
-- intent: tell_another_joke
-  examples: |
-    - [yes](yes_or_no)
-    - [ya](yes_or_no), tell me another one
-
-- intent: stop_telling_jokes
-  examples: |
-    - [no](yes_or_no)
-    - [NO](yes_or_no), your jokes are so bad!
+    - Sag mir wie lange es von [Holzapfelkreuth](from_station) zur [Hochschule Muenchen](to_station) dauert.
+    - Wie lange brauche ich von der [Hochschule Muenchen](from_station) zum [Olympiazentrum](to_station)?
+    - Wie lange brauche ich von der [Hochschule Muenchen](from_station) zum [Heimeranplatz](to_station)?
+    - Wie lange brauche ich von der [Hochschule Muenchen](from_station) zur [Poccistrasse](to_station)?
+    - Wie lange brauche ich von der [Hochschule Muenchen](from_station) zum [Odeonsplatz](to_station)?
+    - [Hochschule München](from_station) nach [Garching](to_station)
 
 
